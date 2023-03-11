@@ -41,8 +41,6 @@
       </button>
     </div>
   </div>
-  
-    
 </template>
 
 <script lang="ts">
@@ -74,7 +72,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .movieListWrapper{
   display: flex;
   flex-wrap: wrap;
@@ -150,6 +148,4 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
-
 </style>

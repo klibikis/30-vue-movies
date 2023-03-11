@@ -7,7 +7,6 @@
       <button type="submit" class="btn-search">🔍</button>
       <input type="text" v-model="searchInput" placeholder="Search movie..." class="search-input" />
     </form>
-
 </template>
 
 <script lang="ts">
@@ -38,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .btn-search{
   height: 30px;
   width: 40px;

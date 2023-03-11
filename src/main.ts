@@ -9,15 +9,13 @@ import router from './router'
 
 import './assets/main.css'
 
-
 const app = createApp(App)
 app
-    .component('MovieList', MovieList)
-    .component('MovieDetails', MovieDetails)
-    .component('SearchBar', SearchBar)
+  .component('MovieList', MovieList)
+  .component('MovieDetails', MovieDetails)
+  .component('SearchBar', SearchBar)
 
 app.use(router)
 app.use(createPinia())
-
 
 app.mount('#app')

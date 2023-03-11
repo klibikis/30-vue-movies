@@ -6,7 +6,6 @@
 import type MovieDetails from '@/components/MovieDetails.vue';
 
 export default {
-
 }
 </script>
 

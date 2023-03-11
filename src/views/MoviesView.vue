@@ -2,7 +2,7 @@
   <div class="searchBar-wrapper">
     <SearchBar/>
   </div>
-    <MovieList/>
+  <MovieList/>
 </template>
 
 <script lang="ts">
@@ -22,12 +22,10 @@ export default {
     }),
     
   },
-
 }
-
 </script>
 
-<style>
+<style scoped>
 .searchBar-wrapper{
   display: flex;
   justify-content: flex-end;

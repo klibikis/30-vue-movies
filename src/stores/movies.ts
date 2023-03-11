@@ -8,7 +8,6 @@ type Movie = {
   imdbID: string,
   Poster: string
 }
-
 type MovieDetailed = {
   Actors: string,
   Awards: string,

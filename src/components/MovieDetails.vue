@@ -11,7 +11,6 @@
           <h2>{{ singleMovieFromDb.Title }}</h2>
           <RouterLink to="/movies" class="routerLink">➳ Back to movies</RouterLink>
         </div>
-        
         <div class="movieDetails">
           <div class="movieDetailsColumn">
             <p class="bold">PLOT</p>
@@ -78,7 +77,6 @@ export default {
 </script>
 
 <style scoped>
-
 .bold{
   font-weight: bold;
 }
