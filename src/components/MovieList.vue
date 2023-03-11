@@ -4,25 +4,40 @@
       <router-link :to='`movies/${movie.imdbID}`' class="movieCard" v-for="movie in moviesFromDb" :key="movie.imdbID">
         <div class="imageWrapper" :style="{ backgroundImage: `url(${movie.Poster})` }">
         </div>
-        
         <h3 class="movieTitle">{{ movie.Title }}</h3>
       </router-link>
     </div>
     <div class="paginationWrapper">
-      <button @click="openFirstPage()">
-        First
+      <button 
+        @click="openFirstPage()" 
+        class="btn-pagination"
+        :disabled="isFirstPage"
+      >
+        ↞
       </button>
-      <button @click="openPreviousPage()">
-        Previous
+      <button 
+        @click="openPreviousPage()" 
+        class="btn-pagination"
+        :disabled="isFirstPage"
+      >
+        ←
       </button>
-      <div>
+      <div class="pagination-currentPage">
         {{ currentMoviesPage }}
       </div>
-      <button @click="openNextPage()">
-        Next
+      <button 
+        @click="openNextPage()" 
+        class="btn-pagination"
+        :disabled="isLastPage"
+      >
+        →
       </button>
-      <button @click="openLastPage()">
-        Last
+      <button 
+        @click="openLastPage()" 
+        class="btn-pagination"
+        :disabled="isLastPage"
+      >
+        ↠
       </button>
     </div>
   </div>
@@ -39,7 +54,9 @@ export default {
     ...mapState(useMoviesStore, {
       moviesFromDb: 'moviesFromDb',
       searchMovie: 'searchMovie',
-      currentMoviesPage: 'currentMoviesPage'
+      currentMoviesPage: 'currentMoviesPage',
+      isFirstPage: 'isFirstPage',
+      isLastPage: 'isLastPage'
     })
   },
   methods: {
@@ -104,6 +121,32 @@ export default {
   margin: 0 auto;
   display: flex;
   gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.btn-pagination{
+  height: 100%;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.617);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 25px;
+  font-weight: lighter;
+}
+.btn-pagination:hover{
+  background-color: rgba(255, 255, 255, 0.808);
+  box-shadow: 0 0 15px white;
+}
+.pagination-currentPage{
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 255, 255, 0.808);
+  box-shadow: 0 0 5px white;
+  color: black;
+  border-radius: 3px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

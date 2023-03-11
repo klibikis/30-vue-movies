@@ -31,8 +31,8 @@ export default {
       setMovieSearchKeyword: 'setMovieSearchKeyword'
     }),
     handleSearchSubmit(searchInput: string) {
-      this.fetchMoviesFromDatabase(searchInput)
       this.setMovieSearchKeyword(searchInput)
+      this.fetchMoviesFromDatabase()
     }
   }
 }

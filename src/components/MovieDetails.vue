@@ -8,7 +8,7 @@
       </div>
       <div class="movieContent">
         <div class="movieHeader">
-          <h2 class="title">{{ singleMovieFromDb.Title }}</h2>
+          <h2>{{ singleMovieFromDb.Title }}</h2>
           <RouterLink to="/movies" class="routerLink">➳ Back to movies</RouterLink>
         </div>
         
@@ -120,9 +120,6 @@ export default {
   width: 100%;
   gap: 20px;
   padding: 10px;
-}
-.title{
-
 }
 .movieDetails{
   display: flex;

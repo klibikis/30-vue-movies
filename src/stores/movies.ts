@@ -29,7 +29,9 @@ export const useMoviesStore = defineStore('main', {
     searchMovie: '',
     singleMovieFromDb: {} as MovieDetailed,
     currentMoviesPage: 1,
-    lastMoviesPage: 0
+    lastMoviesPage: 0,
+    isFirstPage: true,
+    isLastPage: false
   }),
   actions: {
     setMovieSearchKeyword(movie: string) {
@@ -42,7 +44,6 @@ export const useMoviesStore = defineStore('main', {
       const formattedSearchMovie = this.searchMovie.replace(/\s/g, '+')
       axios.get(`http://www.omdbapi.com/?s=${formattedSearchMovie}&page=${this.currentMoviesPage}&apikey=4ad8f06c`).then(({data}) => {
         this.moviesFromDb = data.Search
-        console.log(data)
         this.setLastMoviePage(data.totalResults)
       })
     },
@@ -57,18 +58,41 @@ export const useMoviesStore = defineStore('main', {
     openNextPage() {
       this.currentMoviesPage += 1
       this.fetchMoviesFromDatabase()
+      this.checkIfValidPage()
+      this.smoothScrollTop()
     },
     openPreviousPage() {
       this.currentMoviesPage -= 1
       this.fetchMoviesFromDatabase()
+      this.checkIfValidPage()
+      this.smoothScrollTop()
     },
     openFirstPage() {
       this.currentMoviesPage = 1
       this.fetchMoviesFromDatabase()
+      this.checkIfValidPage()
+      this.smoothScrollTop()
     },
     openLastPage() {
       this.currentMoviesPage = this.lastMoviesPage
       this.fetchMoviesFromDatabase()
+      this.checkIfValidPage()
+      this.smoothScrollTop()
+    },
+    checkIfValidPage(){
+      if(this.currentMoviesPage===1){
+        this.isFirstPage=true
+        this.isLastPage=false
+      }else if(this.currentMoviesPage===this.lastMoviesPage){
+        this.isLastPage=true
+        this.isFirstPage=false
+      }else{
+        this.isFirstPage=false
+        this.isLastPage=false
+      }
+    },
+    smoothScrollTop() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
     }
   }
 })
