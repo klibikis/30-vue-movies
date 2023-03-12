@@ -7,14 +7,13 @@ export default {
 <template>
   <div class="wrapper">
     <RouterView />
-</div>
+  </div>
 </template>
 
 <style scoped>
 .wrapper{
   width: 80%;
   margin: 0 auto;
-  padding: 100px 30px;
 }
 </style>
 

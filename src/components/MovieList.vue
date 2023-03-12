@@ -1,5 +1,4 @@
 <template>
-  <div class="movieListSectionWrapper">
     <div class="movieListWrapper">
       <router-link :to='`movies/${movie.imdbID}`' class="movieCard" v-for="movie in moviesFromDb" :key="movie.imdbID">
         <div class="imageWrapper" :style="{ backgroundImage: `url(${movie.Poster})` }">
@@ -40,7 +39,6 @@
         ↠
       </button>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
@@ -108,11 +106,7 @@ export default {
   background-position: center;
   background-size: cover;
 }
-.movieListSectionWrapper{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+
 .paginationWrapper{
   width: 50%;
   height: 50px;

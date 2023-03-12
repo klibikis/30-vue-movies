@@ -1,8 +1,10 @@
 <template>
-  <div class="searchBar-wrapper">
+  <div class="movieListSectionWrapper">
+    <div class="searchBar-wrapper">
     <SearchBar/>
+    </div>
+    <MovieList/>
   </div>
-  <MovieList/>
 </template>
 
 <script lang="ts">
@@ -30,6 +32,12 @@ export default {
   display: flex;
   justify-content: flex-end;
   padding: 20px 0;
+}
+.movieListSectionWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px 30px;
 }
 </style>
 

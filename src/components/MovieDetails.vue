@@ -1,5 +1,4 @@
 <template>
-  <div class="backgroundWrapper">
     <div class="movieCardWrapper">
       <div 
         class="movieImage"
@@ -44,7 +43,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script lang="ts">
@@ -80,23 +79,9 @@ export default {
 .bold{
   font-weight: bold;
 }
-.backgroundWrapper{
-  background-image: url('https://static-prod.adweek.com/wp-content/uploads/2022/03/movie-theater-buys-back-2022.jpg');
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  min-height: 100vh;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .movieCardWrapper{
-  width: 70%;
+  width: 90%;
   min-height: 60%;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.499);
@@ -109,13 +94,13 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  width: 33%;
   aspect-ratio: 2/3;
 }
 .movieContent{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 66%;
   gap: 20px;
   padding: 10px;
 }
