@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./30-vue-movies', import.meta.url))
+      '@': fileURLToPath(new URL('./30-vue-movies/', import.meta.url))
     }
   }
 })
